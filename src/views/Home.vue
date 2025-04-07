@@ -1,8 +1,9 @@
 <template>
    <div class="home">
       <h1>All Destinations</h1>
+      <p>Let's travell together!</p>
       <button @click="triggerRouterError">Trigger Router Error</button><br>
-      <button @click="addDynamicRoute">Add Dynamic Route</button>
+      <button @click="addDynamicRoute">Add Dynamic Route</button> 
       <router-link to="/dynamic">Visit Dynamic Route</router-link>
       <div class="destinations">
          <router-link v-for="destination in destinations" :key="destination.id"
