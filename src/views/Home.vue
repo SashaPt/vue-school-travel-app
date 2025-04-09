@@ -9,7 +9,7 @@
          <router-link v-for="destination in destinations" :key="destination.id"
             :to="{ name: 'destination.show', params: { id: destination.id, slug: destination.slug } }">
             <h2>{{ destination.name }}</h2>
-            <img :src="`/images/${destination.image}`" :alt="destination.name">
+            <img :src="`${url}images/${destination.image}`" :alt="destination.name">
          </router-link>
       </div>
    </div>
@@ -20,7 +20,8 @@ import { isNavigationFailure, NavigationFailureType } from 'vue-router';
 export default {
    data() {
       return {
-         destinations: sourceData.destinations
+         destinations: sourceData.destinations,
+         url: import.meta.env.BASE_URL
       }
    },
    methods: {

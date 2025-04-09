@@ -4,7 +4,7 @@
          <h1>{{ destination.name }}</h1>
          <GoBack />
          <div class="destination-details">
-            <img :src="`/images/${destination.image}`" :alt="destination.name">
+            <img :src="`${url}images/${destination.image}`" :alt="destination.name">
             <p>{{ destination.description }}</p>
          </div>
       </section>
@@ -26,6 +26,11 @@ import ExperienceCard from '@/components/ExperienceCard.vue';
 import GoBack from '@/components/GoBack.vue';
 
 export default {
+   data() {
+      return {
+         url: import.meta.env.BASE_URL
+      }
+   },
    components: { ExperienceCard, GoBack },
    props: {
       id: { type: Number, required: true }

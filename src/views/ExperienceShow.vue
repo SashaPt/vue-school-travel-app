@@ -1,7 +1,7 @@
 <template>
    <section>
       <h1>{{ experience.name }}</h1>
-      <img :src="`/images/${experience.image}`" :alt="experience.name">
+      <img :src="`${url}images/${experience.image}`" :alt="experience.name">
       <p>{{ experience.description }}</p>
    </section>
 </template>
@@ -9,6 +9,11 @@
 import sourceData from '@/data.json';
 
 export default {
+   data() {
+      return {
+         url: import.meta.env.BASE_URL
+      }
+   },
    props: {
       id: { type: Number, required: true },
       experienceSlug: { type: String, required: true }
